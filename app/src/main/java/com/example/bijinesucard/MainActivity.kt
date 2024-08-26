@@ -8,11 +8,16 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.AccountCircle
+import androidx.compose.material.icons.rounded.Call
+import androidx.compose.material.icons.rounded.Email
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -71,6 +76,7 @@ fun NameInfo(modifier: Modifier) {
                     color = Color.Blue
                 )
         )
+
         Text(
             text = "X KING",
             fontSize = 25.sp,
@@ -87,19 +93,36 @@ fun NameInfo(modifier: Modifier) {
 
 @Composable
 fun Contact(modifier: Modifier) {
-    Column() {
-        Text(
-            text = "+12 (33) 456-7890",
-            modifier = modifier
-        )
-        Text(
-            text = "@zacianhater#1",
-            modifier = modifier
+    Column(horizontalAlignment = Alignment.CenterHorizontally,) {
+        Row {
+            Icon(
+                Icons.Rounded.Call,
+                null
             )
-        Text(
-            text = "gameon@gmail.com",
-            modifier = modifier
-        )
+            Text(
+                text = "+1 (123) 456-7890",
+                modifier = modifier
+            )
+        }
+        Row {
+            Icon(
+                Icons.Rounded.AccountCircle,
+                null
+            )
+            Text(
+                text = "@urshifuhater#1",
+                modifier = modifier
+            )
+        }
+        Row {
+            Icon(Icons.Rounded.Email,
+                null)
+
+            Text(
+                text = "gameon@gmail.com",
+                modifier = modifier
+            )
+        }
     }
 }
 
